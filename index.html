@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+html, body, div, form, fieldset, legend, label
+{
+	margin: 0;
+	padding: 0; 
+	font-family: sans-serif;
+	font-size: 12px;
+}
+ul
+{
+	list-style: none;
+}
+input
+{
+	margin: 5px 0px 5px 10px;
+	padding: 5px;
+	width: 250px;
+	border: 1px solid gray;
+}
+button
+{
+	margin: 5px 0px 5px 32px;
+	padding: 5px 10px;
+	border: 1px solid gray;
+	background-color: white;
+}
+label
+{
+	width: 20px;
+	display: inline-block;
+	text-align: right;
+}
+fieldset
+{
+	margin: 10px;
+	display: inline-block;
+	vertical-align: top;
+	min-width: 100px;
+	max-width: 700px;
+	padding: 10px;
+}
+legend
+{
+	padding: 5px;
+}
+.main
+{
+	padding: 20px;
+}
+</style>
+<script type="text/javascript" src="newton-polynomial.js"></script>
+</head>
+<body>
+<div class="main">
+	<h2>Newton's divided differences interpolation polynomial</h2>
+	<form>
+		<fieldset> 
+			<legend>Comma separated values</legend>
+			<ul>
+				<li><label for="x-series">x:</label> <input id="x-series" value="20, 17, 14, 11, 8, 5, 2" /></li>
+				<li><label for="y-series">f(x):</label> <input id="y-series" value="100, 50, 25, 12.5, 6.25, 3.125, 1.5625" /></li>
+				<li><button type="submit">Interpolate</button></li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>Result</legend>
+			<div id="result">
+
+			</div>
+		</fieldset>
+	</form>
+</div>
+<script>
+var form = document.querySelector('form');
+form.addEventListener('submit', function(evt)
+{ 
+	interpolate(document.querySelector('#x-series').value.split(','), document.querySelector('#y-series').value.split(','));
+	evt.preventDefault();
+}, false);
+
+</script>
+</body>
+</html>
