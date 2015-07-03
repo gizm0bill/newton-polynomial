@@ -1,6 +1,7 @@
 # Newton polynomial
 
-JavaScript implementation of [Wikipedia: Newton polynomial] 
+JavaScript implementation of [Wikipedia: Newton polynomial]    
+__Newton's divided differences interpolation polynomial__
 
 [Wikipedia: Newton polynomial]:https://en.wikipedia.org/wiki/Newton_polynomial
 
